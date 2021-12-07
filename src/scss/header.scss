@@ -3,18 +3,20 @@
 
 .excel {
   &__header {
-    position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
-    height: $header-height;
     justify-content: space-between;
     display: flex;
     align-items: center;
     background: #e8f5e9;
-    min-height: 50px;
+    height: $header-height;
     outline: none;
+  }
+  &__button {
+    margin: 0px 5px;
+    @include button(green);
   }
 }
 .header-excel {
@@ -36,9 +38,5 @@
     &:hover {
       border: 1px solid $border-color;
     }
-  }
-  &__button {
-    margin: 0px 5px;
-    @include button(green);
   }
 }

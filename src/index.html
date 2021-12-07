@@ -12,28 +12,33 @@
     <title>Pure JavaScript Excel</title>
   </head>
   <body>
-    <div id="app" class="container">
-      <div class="excel">
-        <header class="excel__header header-excel">
-          <input
-            type="text"
-            placeholder="new table"
-            class="header-excel__imput"
-          />
-          <div class="header-excel__buttons">
-            <button class="header-excel__button">
-              <span class="material-icons"> delete </span>
-            </button>
+    <div id="app" class="wrapper">
+        <div class="excel">
+          <header class="excel__header header-excel container">
+            <input
+              type="text"
+              placeholder="new table"
+              class="header-excel__imput"
+            />
+            <div class="header-excel__buttons">
+              <button class="header-excel__button">
+                <span class="material-icons"> delete </span>
+              </button>
 
-            <button class="header-excel__button">
-              <span class="material-icons"> exit_to_app </span>
-            </button>
-          </div>
-        </header>
-        <main>
-          <div class="excel__toolbar"></div>
-          <div class="excel__formula"></div>
-        </main>
+              <button class="excel__button">
+                <span class="material-icons"> exit_to_app </span>
+              </button>
+            </div>
+          </header>
+          <main>
+            <div class="excel__toolbar container">
+              <button class="excel__button">
+                <span class="material-icons"> delete </span>
+              </button>
+            </div>
+            <div class="excel__formula container"></div>
+          </main>
+        </div>
       </div>
     </div>
   </body>

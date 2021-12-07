@@ -14,6 +14,14 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
+  font-weight: 500;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -23,14 +31,13 @@ body {
   box-sizing: content-box;
 }
 .excel {
-  position: relative;
 }
 
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 23git px;
+  font-size: 23px;
   display: inline-block;
   line-height: 1;
   text-transform: none;
