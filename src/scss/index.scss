@@ -1,53 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import '~normalize.css';
-@import 'header';
-@import 'toolbar';
-@import 'formula';
-@import 'table';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import "~normalize.css";
+
+@import "header";
+@import "toolbar";
+@import "formula";
+@import "table";
 
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
-  font-weight: 500;
 }
 
-.wrapper {
-  min-height: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  max-width: 1046px;
-  margin: 0px auto;
-  padding: 0 15px;
-  box-sizing: content-box;
-}
 .excel {
+  position: relative;
 }
 
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 23px;
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
-  background-color: none;
-}
+
