@@ -6,7 +6,7 @@ export class Formula extends ExcelComponent {
   constructor($root) {
     super($root, {
       name: 'Formula',
-      listeners: ['imput', 'click'],
+      listeners: ['input', 'click'],
     })
   }
   toHTML() {
@@ -15,7 +15,10 @@ export class Formula extends ExcelComponent {
      <div class="input" contenteditable spellcheck="false"></div>
     `
   }
-  onImput() {
-    console.log('onImput formula ', evenr)
+  onInput(event) {
+    console.log('onInput formula ', event.target.textContent.trim())
+  }
+  onClick(event) {
+    console.log('onClick formula ', event.target.textContent.trim())
   }
 }

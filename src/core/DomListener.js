@@ -1,3 +1,4 @@
+import {capitalize} from '@core/utils'
 const newLocal = 'No root provided for DomListener!'
 
 export class DomListener {
@@ -10,10 +11,27 @@ export class DomListener {
   }
 
   initDOMListeners() {
-    console.log(this.listeners)
+    this.listeners.forEach(listener => {
+      const method = getMethodName(listener)
+      if (!this[method]) {
+        throw new Error(
+            `Method ${method} is not implemented in ${this.name} Component`)
+      }
+      // addIventListener
+      this[method] = this[method].bind()
+      this.$root.on(listener, this[method])
+    })
   }
 
-  deleteDOMListernes() {
-
+  removeDOMListernes() {
+    this.listeners.forEach(listener => {
+      const method = getMethodName(listener)
+      this.$root.off(listener, this[method])
+    })
   }
+}
+
+// only inside this class
+function getMethodName(eventName) {
+  return 'on' + capitalize(eventName)
 }
