@@ -6,7 +6,14 @@ const CODES = {
 function toCell(row) {
   return function(_, col) {
     return `
-    <div class="cell" contenteditable data-col="${col}" data-row="${row}"></div>
+    <div 
+      class="cell" 
+      contenteditable 
+      data-col="${col}" 
+      data-row="${row}" 
+      data-id="${row}:${col}"
+      data-type="cell">
+    </div>
     `
   }
 }
