@@ -1,8 +1,8 @@
 import {ExcelComponent} from '@core/ExcelComponent'
 import {createTable} from '@/components/table/table.template'
 import {resizeHandler} from './table.resize'
-import {shouldResize, isCell} from './table.functions'
-import {TableSelectoin} from './TableSelection'
+import {shouldResize, isCell, matrix} from './table.functions'
+import {TableSelection} from './TableSelection'
 import {$} from '@core/dom'
 
 export class Table extends ExcelComponent {
@@ -14,7 +14,7 @@ export class Table extends ExcelComponent {
     })
   }
   prepare() {
-    this.selection = new TableSelectoin()
+    this.selection = new TableSelection()
   }
   toHTML() {
     return createTable(20)
@@ -22,9 +22,7 @@ export class Table extends ExcelComponent {
 
   init() {
     super.init()
-
-
-    this.selection = new TableSelectoin()
+    this.selection = new TableSelection()
     const $cell = this.$root.find('[data-id="0:0"]')
     this.selection.select($cell)
   }
@@ -35,8 +33,9 @@ export class Table extends ExcelComponent {
     } else if (isCell(event)) {
       const $target = $(event.target)
       if (event.shiftKey) {
-        console.log('data ', $target.data.id)
-        console.log('data ', this.selection.current.data.id)
+        const $cells = matrix($target, this.selection.current)
+            .map(id => this.$root.find(`[data-id="${id}"]`))
+        this.selection.selectGroup($cells)
       } else {
         this.selection.select($target)
       }
